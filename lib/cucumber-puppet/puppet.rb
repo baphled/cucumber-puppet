@@ -37,7 +37,7 @@ class CucumberPuppet
   def klass=(klass)
     if klass.class == String
       # XXX sth like klass.split(/,/) and remove whitespace
-      @klass = klass.to_a
+      @klass = klass.each_line.to_a
     elsif klass.class == Hash
       @klass = klass
     else
